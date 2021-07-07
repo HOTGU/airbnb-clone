@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+
+.search-box {
+    transition: box-shadow 0.2s linear;
+}
+
+.nav_link {
+    @apply ml-8 border-b-2 border-white hover:border-gray-600 h-full flex items-center;
+    a {
+        @apply py-10 px-5;
+    }
+}
+
+textarea {
+    resize: none;
+    height: 200px;
+}
+
+.btn {
+    @apply text-center rounded-sm py-5 font-light text-lg w-full;
+}
+
+.btn-link {
+    @apply text-center py-3 rounded-lg font-light text-lg w-full text-white bg-red-400;
+}
+
+input,
+textarea,
+select {
+    @apply text-left rounded-sm py-5 font-light text-lg w-full border border-gray-500 px-5 focus:outline-none focus:border-green-500;
+}
+
+select {
+    height: 50px;
+    padding: 5px;
+}
+
+form {
+    .input {
+        @apply mb-3;
+        &.has_error {
+            input {
+                @apply bg-red-200 border-gray-500 focus:border-gray-500;
+            }
+        }
+    }
+}
+
+@keyframes messageFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    5% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    95% {
+        opacity: 1;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+.message {
+    animation: messageFadeIn 4s ease-in-out forwards;
+    &.error {
+        @apply bg-red-600;
+    }
+    &.info {
+        @apply bg-blue-400;
+    }
+    &.success {
+        @apply bg-green-600;
+    }
+    &.warning {
+        @apply bg-yellow-200;
+    }
+}
+
+.border-section {
+    @apply border-b border-gray-400 pb-8 mt-8;
+}
+
+.cal-grid {
+    @apply grid grid-cols-7 gap-4 justify-items-center;
+}
+
+@tailwind utilities;
